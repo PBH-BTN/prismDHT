@@ -26,7 +26,7 @@ public class SampleResponse extends AbstractLookupResponse {
 	public static int MAX_INTERVAL = 6 * 3600;
 
 	public SampleResponse(byte[] mtid) {
-		super(mtid, Method.SAMPLE_INFOHASHES, Type.RSP_MSG);
+		super(mtid, Method.PRISM_SAMPLE_INFOHASHES, Type.RSP_MSG);
 	}
 	
 	public void setSamples(ByteBuffer buf) {

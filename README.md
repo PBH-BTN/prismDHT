@@ -1,4 +1,14 @@
-# mldht
+# prismDHT
+
+
+PrismDHT is a fork of mlDHT. However, it is not used for BitTorrent but is instead part of the Prism Protocol.
+
+The Prism Protocol is a work-in-progress anti-leeching information-sharing protocol. When one client connects to another client that supports the Prism Protocol, they can share the activity status of peers associated with their respective downloaders. This allows you to see the peers connected to a specific torrent in other users' downloaders, including statistical data used for anti-leeching purposes.
+
+PrismDHT serves as the routing layer within the Prism Protocol, enabling the discovery of other clients that support the protocol. It is deliberately designed to be incompatible with implementations like mlDHT to avoid impacting the standard BitTorrent DHT network.
+
+
+# mlDHT
 
 [![Build Status (travis)](https://travis-ci.org/the8472/mldht.svg?branch=master)](https://travis-ci.org/the8472/mldht)
 [![Build Status (gitlab)](https://gitlab.com/the8472/mldht/badges/master/pipeline.svg)](https://gitlab.com/the8472/mldht/commits/master)

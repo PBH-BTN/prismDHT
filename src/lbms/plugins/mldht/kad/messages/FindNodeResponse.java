@@ -20,7 +20,7 @@ public class FindNodeResponse extends AbstractLookupResponse {
 	 * @param nodes
 	 */
 	public FindNodeResponse (byte[] mtid) {
-		super(mtid, Method.FIND_NODE, Type.RSP_MSG);
+		super(mtid, Method.PRISM_FIND_NODE, Type.RSP_MSG);
 	}
 
 	/* (non-Javadoc)

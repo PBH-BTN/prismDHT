@@ -13,7 +13,7 @@ import java.util.TreeMap;
 public class PutResponse extends MessageBase {
 
 	public PutResponse(byte[] mtid) {
-		super(mtid, Method.PUT, Type.RSP_MSG);
+		super(mtid, Method.PRISM_PUT, Type.RSP_MSG);
 	}
 	
 	@Override

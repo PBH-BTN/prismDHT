@@ -20,7 +20,7 @@ public class PingRequest extends MessageBase {
 	 * @param id
 	 */
 	public PingRequest () {
-		super(null, Method.PING, Type.REQ_MSG);
+		super(null, Method.PRISM_PING, Type.REQ_MSG);
 	}
 
 	/* (non-Javadoc)

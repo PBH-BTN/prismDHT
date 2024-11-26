@@ -32,7 +32,7 @@ public class AnnounceRequest extends AbstractLookupRequest {
 	 * @param token
 	 */
 	public AnnounceRequest (Key info_hash, int port, byte[] token) {
-		super(info_hash, Method.ANNOUNCE_PEER);
+		super(info_hash, Method.PRISM_ANNOUNCE_PEER);
 		this.port = port;
 		this.token = token;
 	}

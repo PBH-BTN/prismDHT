@@ -46,7 +46,7 @@ public class AnnounceTask extends TargetedTask {
 
 	@Override
 	void callFinished (RPCCall c, MessageBase rsp) {
-		if(rsp.getType() != MessageBase.Type.RSP_MSG || rsp.getMethod() != Method.ANNOUNCE_PEER)
+		if(rsp.getType() != MessageBase.Type.RSP_MSG || rsp.getMethod() != Method.PRISM_ANNOUNCE_PEER)
 			return;
 		if(!c.matchesExpectedID()) {
 			return;

@@ -179,16 +179,16 @@ public class MessageDecoder {
 		MessageBase msg = null;
 
 		switch (msgMethod) {
-		case PING:
+		case PRISM_PING:
 			msg = new PingResponse(mtid);
 			break;
-		case PUT:
+		case PRISM_PUT:
 			msg  = new PutResponse(mtid);
 			break;
-		case ANNOUNCE_PEER:
+		case PRISM_ANNOUNCE_PEER:
 			msg = new AnnounceResponse(mtid);
 			break;
-		case FIND_NODE:
+		case PRISM_FIND_NODE:
 			if (!args.containsKey("nodes") && !args.containsKey("nodes6"))
 				throw new MessageException("received response to find_node request with neither 'nodes' nor 'nodes6' entry", ErrorCode.ProtocolError);
 				//return null;
@@ -198,7 +198,7 @@ public class MessageDecoder {
 				extractNodes(args, "nodes6", DHTtype.IPV6_DHT).ifPresent(n -> m.setNodes(n));
 			});
 			break;
-		case SAMPLE_INFOHASHES:
+		case PRISM_SAMPLE_INFOHASHES:
 			if(!args.containsKey("nodes") && !args.containsKey("nodes6") && !args.containsKey("samples"))
 				throw new MessageException("Expected at least one of the following keys to be present: nodes, nodes6, samples", ErrorCode.ProtocolError);
 			
@@ -221,7 +221,7 @@ public class MessageDecoder {
 			msg = smp;
 			
 			break;
-		case GET:
+		case PRISM_GET:
 			
 			GetResponse get = new GetResponse(mtid);
 			
@@ -244,7 +244,7 @@ public class MessageDecoder {
 			msg = get;
 			
 			break;
-		case GET_PEERS:
+		case PRISM_GET_PEERS:
 			byte[] token = Functional.typedGet(args, "token", byte[].class).orElse(null);
 			Optional<NodeList> nodes = extractNodes(args, "nodes", DHTtype.IPV4_DHT);
 			Optional<NodeList> nodes6 = extractNodes(args, "nodes6", DHTtype.IPV6_DHT);
@@ -342,13 +342,13 @@ public class MessageDecoder {
 		Method method = Optional.ofNullable(MessageBase.messageMethod.get(requestMethod)).orElse(Method.UNKNOWN);
 		
 		switch(method) {
-			case PING:
+			case PRISM_PING:
 				msg = new PingRequest();
 				break;
-			case FIND_NODE:
-			case GET_PEERS:
-			case GET:
-			case SAMPLE_INFOHASHES:
+			case PRISM_FIND_NODE:
+			case PRISM_GET_PEERS:
+			case PRISM_GET:
+			case PRISM_SAMPLE_INFOHASHES:
 			case UNKNOWN:
 				
 				hash = Stream.of(args.get("target"), args.get("info_hash")).filter(byte[].class::isInstance).findFirst().map(byte[].class::cast).orElseThrow(() -> {
@@ -366,16 +366,16 @@ public class MessageDecoder {
 				AbstractLookupRequest req;
 				
 				switch(method) {
-					case FIND_NODE:
+					case PRISM_FIND_NODE:
 						req = new FindNodeRequest(target);
 						break;
-					case GET_PEERS:
+					case PRISM_GET_PEERS:
 						req = new GetPeersRequest(target);
 						break;
-					case GET:
+					case PRISM_GET:
 						req = new GetRequest(target);
 						break;
-					case SAMPLE_INFOHASHES:
+					case PRISM_SAMPLE_INFOHASHES:
 						req = new SampleRequest(target);
 						break;
 					default:
@@ -410,7 +410,7 @@ public class MessageDecoder {
 				msg = req;
 				
 				break;
-			case PUT:
+			case PRISM_PUT:
 				
 				PathMatcher m = new PathMatcher(Type.REQ_MSG.innerKey(),"v");
 				Tokenizer t = new Tokenizer();
@@ -429,7 +429,7 @@ public class MessageDecoder {
 					put.validate();
 				});
 				break;
-			case ANNOUNCE_PEER:
+			case PRISM_ANNOUNCE_PEER:
 				
 				hash = Functional.typedGet(args, "info_hash", byte[].class).filter(b -> b.length == Key.SHA1_HASH_LENGTH).orElse(null);
 				int port = Functional.typedGet(args, "port", Long.class).filter(p -> p > 0 && p <= 65535).orElse(0L).intValue();

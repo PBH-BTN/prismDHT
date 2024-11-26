@@ -11,7 +11,7 @@ import lbms.plugins.mldht.kad.Key;
 public class SampleRequest extends AbstractLookupRequest {
 
 	public SampleRequest(Key target) {
-		super(target, Method.SAMPLE_INFOHASHES);
+		super(target, Method.PRISM_SAMPLE_INFOHASHES);
 		// TODO Auto-generated constructor stub
 	}
 

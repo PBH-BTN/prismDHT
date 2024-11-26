@@ -21,7 +21,7 @@ public class AnnounceResponse extends MessageBase {
 	 * @param id
 	 */
 	public AnnounceResponse (byte[] mtid) {
-		super(mtid, Method.ANNOUNCE_PEER, Type.RSP_MSG);
+		super(mtid, Method.PRISM_ANNOUNCE_PEER, Type.RSP_MSG);
 	}
 
 	/* (non-Javadoc)

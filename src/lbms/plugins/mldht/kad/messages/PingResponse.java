@@ -22,7 +22,7 @@ public class PingResponse extends MessageBase {
 	 * @param id
 	 */
 	public PingResponse (byte[] mtid) {
-		super(mtid, Method.PING, Type.RSP_MSG);
+		super(mtid, Method.PRISM_PING, Type.RSP_MSG);
 	}
 
 	/* (non-Javadoc)

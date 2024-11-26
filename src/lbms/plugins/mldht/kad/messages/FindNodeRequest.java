@@ -19,7 +19,7 @@ public class FindNodeRequest extends AbstractLookupRequest {
 	 * @param target
 	 */
 	public FindNodeRequest (Key target) {
-		super(target,Method.FIND_NODE);
+		super(target,Method.PRISM_FIND_NODE);
 	}
 
 	/* (non-Javadoc)

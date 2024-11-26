@@ -108,7 +108,7 @@ public class GetLookupTask extends IteratingTask {
 
 	@Override
 	void callFinished(RPCCall c, MessageBase rsp) {
-		if(rsp.getType() != MessageBase.Type.RSP_MSG || rsp.getMethod() != MessageBase.Method.GET)
+		if(rsp.getType() != MessageBase.Type.RSP_MSG || rsp.getMethod() != MessageBase.Method.PRISM_GET)
 			return;
 		
 		GetResponse get = (GetResponse) rsp;

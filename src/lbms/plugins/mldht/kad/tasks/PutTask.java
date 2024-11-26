@@ -72,7 +72,7 @@ public class PutTask extends TargetedTask {
 
 	@Override
 	void callFinished(RPCCall c, MessageBase rsp) {
-		if(rsp.getMethod() != Method.PUT || rsp.getType() != Type.RSP_MSG)
+		if(rsp.getMethod() != Method.PRISM_PUT || rsp.getType() != Type.RSP_MSG)
 			return;
 		if(!c.matchesExpectedID())
 			return;

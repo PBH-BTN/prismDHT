@@ -123,7 +123,7 @@ public class PeerLookupTask extends IteratingTask {
 	 */
 	@Override
 	void callFinished (RPCCall c, MessageBase rsp) {
-		if (c.getMessageMethod() != Method.GET_PEERS) {
+		if (c.getMessageMethod() != Method.PRISM_GET_PEERS) {
 			return;
 		}
 		

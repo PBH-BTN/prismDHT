@@ -227,8 +227,8 @@ public abstract class MessageBase {
 	};
 
 	public static enum Method {
-		PING, FIND_NODE, GET_PEERS, ANNOUNCE_PEER, GET, PUT, SAMPLE_INFOHASHES, UNKNOWN;
-		
+		PRISM_PING, PRISM_FIND_NODE, PRISM_GET_PEERS, PRISM_ANNOUNCE_PEER, PRISM_GET, PRISM_PUT, PRISM_SAMPLE_INFOHASHES, UNKNOWN;
+
 		String getRPCName()	{
 			return name().toLowerCase();
 		}

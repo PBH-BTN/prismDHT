@@ -13,7 +13,7 @@ import the8472.bencode.BEncoder;
 public class GetResponse extends AbstractLookupResponse {
 
 	public GetResponse(byte[] mtid) {
-		super(mtid, Method.GET, Type.RSP_MSG);
+		super(mtid, Method.PRISM_GET, Type.RSP_MSG);
 	}
 	
 	

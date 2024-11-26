@@ -15,7 +15,7 @@ public class GetRequest extends AbstractLookupRequest {
 	long onlySendValueIfSeqGreaterThan = -1;
 
 	public GetRequest(Key target) {
-		super(target, Method.GET);
+		super(target, Method.PRISM_GET);
 		// TODO Auto-generated constructor stub
 	}
 	

@@ -190,7 +190,7 @@ public class Firehose implements Component {
 	}
 	
 	void incomingMessage(DHT dht, MessageBase msg) {
-		if(msg.getType() != MessageBase.Type.REQ_MSG || msg.getMethod() != MessageBase.Method.GET_PEERS)
+		if(msg.getType() != MessageBase.Type.REQ_MSG || msg.getMethod() != MessageBase.Method.PRISM_GET_PEERS)
 			return;
 		if(connections.isEmpty())
 			return;

@@ -105,7 +105,7 @@ public class NodeLookup extends IteratingTask {
 	void callFinished (RPCCall c, MessageBase rsp) {
 
 		// check the response and see if it is a good one
-		if (rsp.getMethod() != Method.FIND_NODE || rsp.getType() != Type.RSP_MSG)
+		if (rsp.getMethod() != Method.PRISM_FIND_NODE || rsp.getType() != Type.RSP_MSG)
 			return;
 		
 		KBucketEntry match = todo.acceptResponse(c);

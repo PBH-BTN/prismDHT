@@ -54,7 +54,7 @@ public class PutRequest extends MessageBase {
 	
 
 	public PutRequest() {
-		super(null, Method.PUT, Type.REQ_MSG);
+		super(null, Method.PRISM_PUT, Type.REQ_MSG);
 	}
 	
 	

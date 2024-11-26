@@ -38,7 +38,7 @@ public class GetPeersResponse extends AbstractLookupResponse {
 	 * @param token
 	 */
 	public GetPeersResponse (byte[] mtid) {
-		super(mtid, Method.GET_PEERS, Type.RSP_MSG);
+		super(mtid, Method.PRISM_GET_PEERS, Type.RSP_MSG);
 	}
 	
 	

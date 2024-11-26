@@ -81,7 +81,7 @@ public class PassiveRedisIndexer implements Component {
 		if(!running)
 			return;
 		
-		if(msg.getType() == Type.REQ_MSG && msg.getMethod() == Method.GET_PEERS)
+		if(msg.getType() == Type.REQ_MSG && msg.getMethod() == Method.PRISM_GET_PEERS)
 		{
 			GetPeersRequest req = (GetPeersRequest) msg;
 			long now = System.currentTimeMillis();

@@ -70,7 +70,7 @@ public class OpentrackerLiveSync implements Component {
 	void incomingPacket(DHT dht, MessageBase msg) {
 		if(!running)
 			return;
-		if(msg.getType() != MessageBase.Type.REQ_MSG || msg.getMethod() != Method.GET_PEERS)
+		if(msg.getType() != MessageBase.Type.REQ_MSG || msg.getMethod() != Method.PRISM_GET_PEERS)
 			return;
 		
 		GetPeersRequest req = (GetPeersRequest) msg;

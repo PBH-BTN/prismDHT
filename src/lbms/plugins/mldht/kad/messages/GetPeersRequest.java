@@ -25,7 +25,7 @@ public class GetPeersRequest extends AbstractLookupRequest {
 	 * @param info_hash
 	 */
 	public GetPeersRequest (Key info_hash) {
-		super(info_hash,Method.GET_PEERS);
+		super(info_hash,Method.PRISM_GET_PEERS);
 	}
 
 	/* (non-Javadoc)
